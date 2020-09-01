@@ -25,9 +25,8 @@
 #     break
 # }
 
-my_ti_dpt <- function(tmp.expression, tmp.features) {
+my_ti_dpt <- function(tmp.expression) {
     
-    tmp.expression <- tmp.expression[tmp.features,]
     print(dim(tmp.expression))
 
     # connect to API
