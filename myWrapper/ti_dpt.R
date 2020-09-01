@@ -36,6 +36,9 @@ my_ti_dpt <- function(tmp.expression) {
 
     expression <- t(tmp.expression) %>% as.matrix
 
+    # TIMING: done with preproc
+    timings <- list(method_afterpreproc = Sys.time())
+    
     # run diffusion maps
     dm <- destiny::DiffusionMap(
       data = expression,
@@ -59,6 +62,9 @@ my_ti_dpt <- function(tmp.expression) {
     tips <- destiny::tips(dpt)
     tip_names <- rownames(expression)[tips]
 
+    # TIMING: done with trajectory inference
+    timings$method_aftermethod <- Sys.time()
+    
     #####################################
     ###     SAVE OUTPUT TRAJECTORY    ###
     #####################################
