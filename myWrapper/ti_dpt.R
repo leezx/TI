@@ -25,9 +25,10 @@
 #     break
 # }
 
-my_ti_dpt <- function(tmp.counts, tmp.expression, tmp.subtype, tmp.features) {
+my_ti_dpt <- function(tmp.expression, tmp.features) {
     
     tmp.expression <- tmp.expression[tmp.features,]
+    print(dim(tmp.expression))
 
     # connect to API
     library(dplyr, warn.conflicts = FALSE)
